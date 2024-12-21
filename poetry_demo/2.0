@@ -1,0 +1,364 @@
+Using version ^0.3.6 for tensor
+
+Updating dependencies
+Resolving dependencies...
+
+Package operations: 11 installs, 1 update, 0 removals
+
+  • Updating setuptools (75.1.0 -> 75.6.0)
+  • Installing automat (24.8.1)
+  • Installing constantly (23.10.4)
+  • Installing hyperlink (21.0.0)
+  • Installing incremental (24.7.2)
+  • Installing pyasn1 (0.6.1)
+  • Installing zope-interface (7.2)
+
+  SSLCertVerificationError
+
+  [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+  at ~\.conda\envs\ai_1k_poems\lib\ssl.py:1375 in do_handshake
+      1371|         timeout = self.gettimeout()
+      1372|         try:
+      1373|             if timeout == 0.0 and block:
+      1374|                 self.settimeout(None)
+    > 1375|             self._sslobj.do_handshake()
+      1376|         finally:
+      1377|             self.settimeout(timeout)
+      1378| 
+      1379|     def _real_connect(self, addr, connect_ex):
+
+The following error occurred when trying to handle this error:
+
+
+  SSLError
+
+  [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\urllib3\connectionpool.py:490 in _make_request
+       486|             if isinstance(
+       487|                 new_e, (OSError, NewConnectionError, TimeoutError, SSLError)
+       488|             ) and (conn and conn.proxy and not conn.has_connected_to_proxy):
+       489|                 new_e = _wrap_proxy_error(new_e, conn.proxy.scheme)
+    >  490|             raise new_e
+       491| 
+       492|         # conn.request() calls http.client.*.request, not the method in
+       493|         # urllib3.request. It also calls makefile (recv) on the socket.
+       494|         try:
+
+The following error occurred when trying to handle this error:
+
+
+  MaxRetryError
+
+  HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Max retries exceeded with url: /packages/0d/38/221e5b2ae676a3938c2c1919131410c342b6efc2baffeda395dd66eeca8f/incremental-24.7.2-py3-none-any.whl (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\urllib3\util\retry.py:519 in increment
+      515|         )
+      516| 
+      517|         if new_retry.is_exhausted():
+      518|             reason = error or ResponseError(cause)
+    > 519|             raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+      520| 
+      521|         log.debug("Incremented Retry for (url='%s'): %r", url, new_retry)
+      522| 
+      523|         return new_retry
+
+The following error occurred when trying to handle this error:
+
+
+  SSLError
+
+  HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Max retries exceeded with url: /packages/0d/38/221e5b2ae676a3938c2c1919131410c342b6efc2baffeda395dd66eeca8f/incremental-24.7.2-py3-none-any.whl (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\requests\adapters.py:698 in send
+      694|                 raise ProxyError(e, request=request)
+      695| 
+      696|             if isinstance(e.reason, _SSLError):
+      697|                 # This branch is for urllib3 v1.22 and later.
+    > 698|                 raise SSLError(e, request=request)
+      699| 
+      700|             raise ConnectionError(e, request=request)
+      701| 
+      702|         except ClosedPoolError as e:
+
+
+  SSLCertVerificationError
+
+  [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+  at ~\.conda\envs\ai_1k_poems\lib\ssl.py:1375 in do_handshake
+      1371|         timeout = self.gettimeout()
+      1372|         try:
+      1373|             if timeout == 0.0 and block:
+      1374|                 self.settimeout(None)
+    > 1375|             self._sslobj.do_handshake()
+      1376|         finally:
+      1377|             self.settimeout(timeout)
+      1378| 
+      1379|     def _real_connect(self, addr, connect_ex):
+
+The following error occurred when trying to handle this error:
+
+
+  SSLError
+
+  [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\urllib3\connectionpool.py:490 in _make_request
+       486|             if isinstance(
+       487|                 new_e, (OSError, NewConnectionError, TimeoutError, SSLError)
+       488|             ) and (conn and conn.proxy and not conn.has_connected_to_proxy):
+       489|                 new_e = _wrap_proxy_error(new_e, conn.proxy.scheme)
+    >  490|             raise new_e
+       491| 
+       492|         # conn.request() calls http.client.*.request, not the method in
+       493|         # urllib3.request. It also calls makefile (recv) on the socket.
+       494|         try:
+
+The following error occurred when trying to handle this error:
+
+
+  MaxRetryError
+
+  HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Max retries exceeded with url: /packages/7b/90/12d50b95f40e3b2fc0ba7f7782104093b9fd62806b13b98ef4e580f2ca61/zope.interface-7.2-cp310-cp310-win_amd64.whl (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\urllib3\util\retry.py:519 in increment
+      515|         )
+      516| 
+      517|         if new_retry.is_exhausted():
+      518|             reason = error or ResponseError(cause)
+    > 519|             raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+      520| 
+      521|         log.debug("Incremented Retry for (url='%s'): %r", url, new_retry)
+      522| 
+      523|         return new_retry
+
+The following error occurred when trying to handle this error:
+
+
+  SSLError
+
+  HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Max retries exceeded with url: /packages/7b/90/12d50b95f40e3b2fc0ba7f7782104093b9fd62806b13b98ef4e580f2ca61/zope.interface-7.2-cp310-cp310-win_amd64.whl (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\requests\adapters.py:698 in send
+      694|                 raise ProxyError(e, request=request)
+      695| 
+      696|             if isinstance(e.reason, _SSLError):
+      697|                 # This branch is for urllib3 v1.22 and later.
+    > 698|                 raise SSLError(e, request=request)
+      699| 
+      700|             raise ConnectionError(e, request=request)
+      701| 
+      702|         except ClosedPoolError as e:
+
+
+  SSLCertVerificationError
+
+  [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+  at ~\.conda\envs\ai_1k_poems\lib\ssl.py:1375 in do_handshake
+      1371|         timeout = self.gettimeout()
+      1372|         try:
+      1373|             if timeout == 0.0 and block:
+      1374|                 self.settimeout(None)
+    > 1375|             self._sslobj.do_handshake()
+      1376|         finally:
+      1377|             self.settimeout(timeout)
+      1378| 
+      1379|     def _real_connect(self, addr, connect_ex):
+
+The following error occurred when trying to handle this error:
+
+
+  SSLError
+
+  [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\urllib3\connectionpool.py:490 in _make_request
+       486|             if isinstance(
+       487|                 new_e, (OSError, NewConnectionError, TimeoutError, SSLError)
+       488|             ) and (conn and conn.proxy and not conn.has_connected_to_proxy):
+       489|                 new_e = _wrap_proxy_error(new_e, conn.proxy.scheme)
+    >  490|             raise new_e
+       491| 
+       492|         # conn.request() calls http.client.*.request, not the method in
+       493|         # urllib3.request. It also calls makefile (recv) on the socket.
+       494|         try:
+
+The following error occurred when trying to handle this error:
+
+
+  MaxRetryError
+
+  HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Max retries exceeded with url: /packages/af/cc/55a32a2c98022d88812b5986d2a92c4ff3ee087e83b712ebc703bba452bf/Automat-24.8.1-py3-none-any.whl (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\urllib3\util\retry.py:519 in increment
+      515|         )
+      516| 
+      517|         if new_retry.is_exhausted():
+      518|             reason = error or ResponseError(cause)
+    > 519|             raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+      520| 
+      521|         log.debug("Incremented Retry for (url='%s'): %r", url, new_retry)
+      522| 
+      523|         return new_retry
+
+The following error occurred when trying to handle this error:
+
+
+  SSLError
+
+  HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Max retries exceeded with url: /packages/af/cc/55a32a2c98022d88812b5986d2a92c4ff3ee087e83b712ebc703bba452bf/Automat-24.8.1-py3-none-any.whl (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\requests\adapters.py:698 in send
+      694|                 raise ProxyError(e, request=request)
+      695| 
+      696|             if isinstance(e.reason, _SSLError):
+      697|                 # This branch is for urllib3 v1.22 and later.
+    > 698|                 raise SSLError(e, request=request)
+      699| 
+      700|             raise ConnectionError(e, request=request)
+      701| 
+      702|         except ClosedPoolError as e:
+
+
+  SSLCertVerificationError
+
+  [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+  at ~\.conda\envs\ai_1k_poems\lib\ssl.py:1375 in do_handshake
+      1371|         timeout = self.gettimeout()
+      1372|         try:
+      1373|             if timeout == 0.0 and block:
+      1374|                 self.settimeout(None)
+    > 1375|             self._sslobj.do_handshake()
+      1376|         finally:
+      1377|             self.settimeout(timeout)
+      1378| 
+      1379|     def _real_connect(self, addr, connect_ex):
+
+The following error occurred when trying to handle this error:
+
+
+  SSLError
+
+  [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\urllib3\connectionpool.py:490 in _make_request
+       486|             if isinstance(
+       487|                 new_e, (OSError, NewConnectionError, TimeoutError, SSLError)
+       488|             ) and (conn and conn.proxy and not conn.has_connected_to_proxy):
+       489|                 new_e = _wrap_proxy_error(new_e, conn.proxy.scheme)
+    >  490|             raise new_e
+       491| 
+       492|         # conn.request() calls http.client.*.request, not the method in
+       493|         # urllib3.request. It also calls makefile (recv) on the socket.
+       494|         try:
+
+The following error occurred when trying to handle this error:
+
+
+  MaxRetryError
+
+  HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Max retries exceeded with url: /packages/6e/aa/8caf6a0a3e62863cbb9dab27135660acba46903b703e224f14f447e57934/hyperlink-21.0.0-py2.py3-none-any.whl (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\urllib3\util\retry.py:519 in increment
+      515|         )
+      516| 
+      517|         if new_retry.is_exhausted():
+      518|             reason = error or ResponseError(cause)
+    > 519|             raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+      520| 
+      521|         log.debug("Incremented Retry for (url='%s'): %r", url, new_retry)
+      522| 
+      523|         return new_retry
+
+The following error occurred when trying to handle this error:
+
+
+  SSLError
+
+  HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Max retries exceeded with url: /packages/6e/aa/8caf6a0a3e62863cbb9dab27135660acba46903b703e224f14f447e57934/hyperlink-21.0.0-py2.py3-none-any.whl (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\requests\adapters.py:698 in send
+      694|                 raise ProxyError(e, request=request)
+      695| 
+      696|             if isinstance(e.reason, _SSLError):
+      697|                 # This branch is for urllib3 v1.22 and later.
+    > 698|                 raise SSLError(e, request=request)
+      699| 
+      700|             raise ConnectionError(e, request=request)
+      701| 
+      702|         except ClosedPoolError as e:
+
+
+  SSLCertVerificationError
+
+  [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+  at ~\.conda\envs\ai_1k_poems\lib\ssl.py:1375 in do_handshake
+      1371|         timeout = self.gettimeout()
+      1372|         try:
+      1373|             if timeout == 0.0 and block:
+      1374|                 self.settimeout(None)
+    > 1375|             self._sslobj.do_handshake()
+      1376|         finally:
+      1377|             self.settimeout(timeout)
+      1378| 
+      1379|     def _real_connect(self, addr, connect_ex):
+
+The following error occurred when trying to handle this error:
+
+
+  SSLError
+
+  [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\urllib3\connectionpool.py:490 in _make_request
+       486|             if isinstance(
+       487|                 new_e, (OSError, NewConnectionError, TimeoutError, SSLError)
+       488|             ) and (conn and conn.proxy and not conn.has_connected_to_proxy):
+       489|                 new_e = _wrap_proxy_error(new_e, conn.proxy.scheme)
+    >  490|             raise new_e
+       491| 
+       492|         # conn.request() calls http.client.*.request, not the method in
+       493|         # urllib3.request. It also calls makefile (recv) on the socket.
+       494|         try:
+
+The following error occurred when trying to handle this error:
+
+
+  MaxRetryError
+
+  HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Max retries exceeded with url: /packages/b8/40/c199d095151addf69efdb4b9ca3a4f20f70e20508d6222bffb9b76f58573/constantly-23.10.4-py3-none-any.whl (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\urllib3\util\retry.py:519 in increment
+      515|         )
+      516| 
+      517|         if new_retry.is_exhausted():
+      518|             reason = error or ResponseError(cause)
+    > 519|             raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+      520| 
+      521|         log.debug("Incremented Retry for (url='%s'): %r", url, new_retry)
+      522| 
+      523|         return new_retry
+
+The following error occurred when trying to handle this error:
+
+
+  SSLError
+
+  HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Max retries exceeded with url: /packages/b8/40/c199d095151addf69efdb4b9ca3a4f20f70e20508d6222bffb9b76f58573/constantly-23.10.4-py3-none-any.whl (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+  at ~\.conda\envs\ai_1k_poems\lib\site-packages\requests\adapters.py:698 in send
+      694|                 raise ProxyError(e, request=request)
+      695| 
+      696|             if isinstance(e.reason, _SSLError):
+      697|                 # This branch is for urllib3 v1.22 and later.
+    > 698|                 raise SSLError(e, request=request)
+      699| 
+      700|             raise ConnectionError(e, request=request)
+      701| 
+      702|         except ClosedPoolError as e:
+
