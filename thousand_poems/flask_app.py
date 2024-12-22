@@ -24,7 +24,8 @@ def check_image():
         
         image_source = request.files['file']
         image_file_name = image_source.filename 
-        if image_file_name.endswith(ALLOWED_EXTENSIONS):
+
+        if image_file_name.lower().endswith(ALLOWED_EXTENSIONS.lower()):
             output = check_image.evaluate(image_source)
             return render_template("index.html", message=output)
         else:

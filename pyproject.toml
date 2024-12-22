@@ -13,6 +13,7 @@ pillow = "^11.0.0"
 openai = "^1.57.4"
 flask = "^3.1.0"
 python-dotenv = "^1.0.1"
+langchain-ollama = "^0.2.2"
 
 
 [[tool.poetry.source]]
