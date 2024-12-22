@@ -3,7 +3,8 @@ import os
 from flask import Flask, render_template, request, jsonify
 from ImageClassifier import ImageClassifier
 from multiprocessing import set_start_method
-
+from ai_chat import Ai_chat
+import re
 
 app = Flask(__name__)
 ALLOWED_EXTENSIONS = 'jpg'
@@ -26,7 +27,10 @@ def check_image():
         image_file_name = image_source.filename 
 
         if image_file_name.lower().endswith(ALLOWED_EXTENSIONS.lower()):
-            output = check_image.evaluate(image_source)
+            output = transfomer_classifier.evaluate(image_source)
+            output = ai_chat.generate_poem(output)
+            print(output)
+            output = re.split(r'[\n]', output)
             return render_template("index.html", message=output)
         else:
             return render_template("index.html", message="Invalid format/no file detected")
@@ -35,5 +39,6 @@ def check_image():
         return jsonify({"error" : str(e)}), 500
 
 if __name__  == '__main__':
-    check_image = ImageClassifier()
+    transfomer_classifier = ImageClassifier()
+    ai_chat = Ai_chat()
     app.run(debug=True)
