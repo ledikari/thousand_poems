@@ -1,0 +1,14 @@
+@startuml
+participant flask as w
+participant imgTranformer as img
+participant lanchain as lo
+participant ollama as o
+actor user as u
+
+u -> w: post image
+w -> img: get image and then classify
+img -> lo: send response to ollama
+lo -> o: geneate poem based on response
+o -> w: provide poem to display
+w -> u: show poem
+@enduml

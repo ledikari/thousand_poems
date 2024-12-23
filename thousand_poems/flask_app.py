@@ -17,11 +17,11 @@ def main():
     message = ""
     return render_template("index.html", message=message)
 
-@app.route('/check_image', methods=['POST'])
+@app.route('/generate', methods=['POST'])
 def check_image():
     try:
         if 'file' not in request.files:
-            return render_template("index.html", message="file not found")
+            return render_template("index.html", error_message="file not found/ file not valid")
         
         image_source = request.files['file']
         image_file_name = image_source.filename 
@@ -33,7 +33,7 @@ def check_image():
             output = re.split(r'[\n]', output)
             return render_template("index.html", message=output)
         else:
-            return render_template("index.html", message="Invalid format/no file detected")
+            return render_template("index.html", error_message="Invalid format/no file detected")
 
     except Exception as e:
         return jsonify({"error" : str(e)}), 500
