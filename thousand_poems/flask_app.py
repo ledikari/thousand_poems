@@ -38,7 +38,7 @@ def check_image():
             output = re.split(r'[\n]', output)
             return render_template("index.html", message=output)
         else:
-            return render_template("index.html", error_message="Invalid format/no file detected")
+            return render_template("index.html", error_message="Invalid format (JPG Only)/no file detected")
 
     except Exception as e:
         return jsonify({"error" : str(e)}), 500
