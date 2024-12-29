@@ -26,7 +26,7 @@ class ImageClassifier(object):
         object (_type_): none
 
     Returns:
-        _type_: With the use of hugging face Transformers, look at the image and try to identify
+        str: With the use of hugging face Transformers, look at the image and try to identify
                 what it is.
     """
 
@@ -42,10 +42,10 @@ class ImageClassifier(object):
         """Evaluate image and determine contents.
 
         Args:
-            image_path (_type_): _description_
+            image_path (str): absolute path of the image to be loaded
 
         Returns:
-            _type_: _description_
+            str: description of the object classified by the Transformer 
         """
         raw_image = Image.open(image_path).convert('RGB')
 
