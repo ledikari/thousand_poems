@@ -1,5 +1,3 @@
-# Use a pipeline as a high-level helper
-# from transformers import pipeline
 import os 
 from pathlib import Path
 import requests
