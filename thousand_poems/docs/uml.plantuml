@@ -1,9 +1,10 @@
 @startuml
+actor user as u
 participant flask as w
-participant imgTranformer as img
+participant imgTransformer as img
 participant lanchain as lo
 participant ollama as o
-actor user as u
+
 
 u -> w: post image
 w -> img: get image and then classify

@@ -17,6 +17,11 @@ def main():
     message = ""
     return render_template("index.html", message=message)
 
+@app.route('/generate', methods=['GET'])
+def generate_mistake():
+    message = ""
+    return render_template("index.html", message=message)
+
 @app.route('/generate', methods=['POST'])
 def check_image():
     try:
