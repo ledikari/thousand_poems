@@ -20,7 +20,28 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin-bottom: 10px;
-           
+        }
+
+        .parent{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .child{
+            background-color: #fdfdfd;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            margin: 5px 0;
+            border-radius: 4px;
+            text-align: center;
+            
         }
 
         .output{
@@ -39,20 +60,29 @@
     </style>
 </head>   
 <body>
-    <div class="container">
-        <h1>Upload an image and be inspired</h1>
-    </div>
-    <div class="container">
-        <form action="/check_image" method = "post" enctype="multipart/form-data">   
-            <input type="file" id="image_path" name="file" />
-            <input type="submit" \>   
-        </form>
-    </div>
-    <div class="output">
-        {% if message %}
-            <p>{{message}}</p>
-        {% endif %}
-    </div>
+    
+    <div class="parent">
+        <div class="child">
+            <h1>Upload an image and be inspired</h1>
+        </div>
+        <div class="child">
+            <form action="/generate" method = "post" enctype="multipart/form-data">   
+                <input type="file" id="image_path" name="file" />
+                <input type="submit" \>   
+            </form>
+        </div>
+        <div class="child">
+            {% if message %}
+                {% for para in message %}
+                    <p>{{para}}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="child">
+            {% if error_message %}
+                <p>{{error_message}}</p>
+            {% endif %}
+        </div>
 </body>   
 </html>
 
